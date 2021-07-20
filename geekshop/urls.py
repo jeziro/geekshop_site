@@ -1,4 +1,3 @@
-# from django.conf.urls import url, include
 from django.conf.urls import include
 from django.contrib import admin
 import mainapp.views as mainapp
@@ -21,6 +20,5 @@ urlpatterns = [
 
 if settings.DEBUG:
     import debug_toolbar
-
 
     urlpatterns += [re_path(r'^__debug__/', include(debug_toolbar.urls))]
