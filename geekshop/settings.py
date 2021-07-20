@@ -87,6 +87,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'geekshop.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
