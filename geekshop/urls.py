@@ -1,4 +1,4 @@
-from django.conf.urls import include, patterns
+from django.conf.urls import *
 from django.contrib import admin
 import mainapp.views as mainapp
 

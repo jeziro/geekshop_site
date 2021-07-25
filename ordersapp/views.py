@@ -8,6 +8,8 @@ from django.http.response import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.dispatch import receiver
 from django.db.models.signals import pre_save, pre_delete
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 from basketapp.models import Basket
 from ordersapp.models import Order, OrderItem
@@ -20,6 +22,10 @@ class OrderList(ListView):
 
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user, is_active=True)
+
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(ListView, self).dispatch(*args, **kwargs)
 
 class OrderCreate(CreateView):
    model = Order
