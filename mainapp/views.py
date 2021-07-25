@@ -37,9 +37,9 @@ def get_same_products(hot_product):
         
 def main(request):
     title = 'главная'  
-    products = Product.objects.filter(is_active=True, category__is_active=True)[:3]
+    # products = Product.objects.filter(is_active=True, category__is_active=True)[:3]
 
-    # products = Product.objects.filter(is_active=True, category__is_active=True).select_related('category')[:3]
+    products = Product.objects.filter(is_active=True, category__is_active=True).select_related('category')[:3]
     
     content = {
         'title': title,

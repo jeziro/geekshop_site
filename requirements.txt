@@ -6,3 +6,4 @@ requests
 django-debug-toolbar
 django-debug-toolbar-template-profiler
 django-extensions
+siege
