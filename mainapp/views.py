@@ -37,7 +37,7 @@ def load_from_json(file_name):
              errors='ignore') as infile:
        return json.load(infile)
 
-@never_cache
+
 def get_basket(user):
     if user.is_authenticated:
         return Basket.objects.filter(user=user)
