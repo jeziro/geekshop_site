@@ -7,7 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 from django.core.cache import cache
 from django.views.decorators.cache import cache_page, never_cache
-from django.utils.functional import cached_property
+
 
 
 JSON_PATH = 'mainapp/json'
@@ -74,8 +74,7 @@ def main(request):
     
     return render(request, 'mainapp/index.html', content)
     
-@cached_property
-def products(request, pk=None, page=1):   
+def products(request, pk=None, page=1):
     title = 'продукты'
 #    links_menu = ProductCategory.objects.filter(is_active=True)
     basket = get_basket(request.user)
