@@ -28,7 +28,7 @@ class Basket(models.Model):
 
     product_cost = property(_get_product_cost)
 
-    @cachedprorepty
+    @cached_prorepty
     def get_items_cached(self):
         return  self.user.basket.select_related()
 
