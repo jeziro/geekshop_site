@@ -32,7 +32,7 @@ class Basket(models.Model):
     def get_items_cached(self):
         return  self.user.basket.select_related()
 
-    def _get_total_quantity(self):
+    def get_total_quantity(self):
         "return total quantity for user"
         # _items = Basket.objects.filter(user=self.user)
         _items = self.get_items_cached
@@ -43,7 +43,7 @@ class Basket(models.Model):
         # total_quantity = property(_get_total_quantity)
         #
     
-    def _get_total_cost(self):
+    def get_total_cost(self):
         "return total cost for user"
         _items = self.get_items_cached
         return sum(list(map(lambda x: x.product_cost, _items)))
