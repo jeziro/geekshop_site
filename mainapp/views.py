@@ -130,7 +130,7 @@ def product(request, pk):
 def contact(request):
     title = 'о нас'
     
-    locations = load_from_json('contact_locations')
+    locations = load_from_json('contact__locations')
     
     content = {
         'title': title,
