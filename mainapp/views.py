@@ -123,14 +123,14 @@ def products(request, pk=None, page=1):
     
 def product(request, pk):
     title = 'продукты'
-    links_menu = ProductCategory.objects.filter(is_active=True)
-    # product = get_object_or_404(Product, pk=pk)
-    product = get_product(pk)
+    # links_menu = ProductCategory.objects.filter(is_active=True)
+    product = get_object_or_404(Product, pk=pk)
+    # product = get_product(pk)
 
     
     content = {
         'title': title, 
-        'links_menu': links_menu,
+        'links_menu': get_links_menu(),
         'product': product, 
         'basket': get_basket(request.user),
     }
