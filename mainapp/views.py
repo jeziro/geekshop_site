@@ -27,8 +27,9 @@ def get_product(pk):
         key = f'product_{pk}'
         product_item = cache.get(key)
         if product_item is None:
-            product_item = get_object_or_404(Product, pk=pk)
+            product_item = Product.objects.get(pk=pk)
             cache.set(key, product_item)
+        return product_item
     else:
         return Product.objects.get(pk=pk)
 
