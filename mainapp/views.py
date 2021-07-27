@@ -139,9 +139,8 @@ def product(request, pk):
 @cache_page(3600)
 def contact(request):
     title = 'о нас'
-    
-    locations = load_from_json('contact__locations')
-    
+    locations = load_from_json('contact_locations')
+
     content = {
         'title': title,
         'locations': locations,
