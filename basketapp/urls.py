@@ -1,7 +1,7 @@
 # from django.conf.urls import url
 
 import basketapp.views as basketapp
-from django.urls import re_path
+from django.urls import path
 
 app_name="basketapp"
 
