@@ -82,6 +82,10 @@ class OrderUpdate(UpdateView):
     success_url = reverse_lazy('order:list')
     fields = []
 
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(OrderUpdate, self).dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         OrderFormSet = inlineformset_factory(Order, OrderItem, form=OrderItemForm, extra=1)
@@ -94,8 +98,7 @@ class OrderUpdate(UpdateView):
             for form in formset.forms:
                 if form.instance.pk:
                     form.initial['price'] = form.instance.product.price
-
-        data['orderitems'] = formset
+            data['orderitems'] = formset
         return data
 
     def form_valid(self, form):
