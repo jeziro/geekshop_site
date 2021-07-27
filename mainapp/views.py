@@ -27,7 +27,7 @@ def get_product(pk):
         key = f'product_{pk}'
         product_item = cache.get(key)
         if product_item is None:
-            product_item = Product.objects.get(pk=pk)
+            product_item = get_object_or_404(Product, pk=pk)
             cache.set(key, product_item)
     else:
         return Product.objects.get(pk=pk)
@@ -124,8 +124,8 @@ def products(request, pk=None, page=1):
 def product(request, pk):
     title = 'продукты'
     # links_menu = ProductCategory.objects.filter(is_active=True)
-    product = get_object_or_404(Product, pk=pk)
-    # product = get_product(pk)
+    # product = get_object_or_404(Product, pk=pk)
+    product = get_product(pk)
 
     
     content = {
