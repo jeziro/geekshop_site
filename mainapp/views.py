@@ -127,10 +127,11 @@ def product(request, pk):
 
     # product = get_object_or_404(Product, pk=pk)
     product = get_product(pk)
+    links_menu = get_links_menu()
     
     content = {
         'title': title, 
-        'links_menu': get_links_menu(),
+        'links_menu': links_menu,
         'product': product, 
         'basket': get_basket(request.user),
     }
