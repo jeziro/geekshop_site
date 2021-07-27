@@ -6,7 +6,7 @@ from basketapp.models import Basket
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 from django.core.cache import cache
-from django.views.decorators.cache import cache_page
+from django.views.decorators.cache import cache_page, never_cache
 
 
 JSON_PATH = 'mainapp/json'
@@ -37,7 +37,7 @@ def load_from_json(file_name):
              errors='ignore') as infile:
        return json.load(infile)
 
-
+@never_cache
 def get_basket(user):
     if user.is_authenticated:
         return Basket.objects.filter(user=user)

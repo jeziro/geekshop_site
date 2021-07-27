@@ -36,7 +36,7 @@
                 <h3 class="big-bold">{{ product.name }}</h3>
                 <br>
                 <p class="price"> {{ product.price }} <span>руб</span></p>
-                <a href="{% url 'basket:add' object.pk %}" class="red-button">
+                <a href="{% url 'basket:add' product.pk %}" class="red-button">
                     заказать
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
