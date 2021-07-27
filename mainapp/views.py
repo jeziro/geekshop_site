@@ -134,7 +134,7 @@ def product(request, pk):
         'product': product, 
         'basket': get_basket(request.user),
     }
-    return render(request, 'mainapp/products.html', content)
+    return render(request, 'mainapp/product.html', content)
     
 @cache_page(3600)
 def contact(request):
