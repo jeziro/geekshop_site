@@ -123,7 +123,7 @@ def products(request, pk=None, page=1):
     
 def product(request, pk):
     title = 'продукты'
-#    links_menu = ProductCategory.objects.filter(is_active=True)
+    # links_menu = ProductCategory.objects.filter(is_active=True)
 
     # product = get_object_or_404(Product, pk=pk)
     product = get_product(pk)
@@ -134,7 +134,7 @@ def product(request, pk):
         'product': product, 
         'basket': get_basket(request.user),
     }
-    return render(request, 'mainapp/product.html', content)
+    return render(request, 'mainapp/products.html', content)
     
 @cache_page(3600)
 def contact(request):
