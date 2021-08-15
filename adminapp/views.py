@@ -95,6 +95,7 @@ class ProductCategoryCreateView(CreateView):
     template_name = 'adminapp/category_update.html'
     success_url = reverse_lazy('admin:categories')
     fields = ('__all__')
+    form_class = ProductCategoryEditForm
     
 
 class ProductCategoryUpdateView(UpdateView):
