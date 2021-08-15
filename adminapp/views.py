@@ -116,8 +116,8 @@ class ProductCategoryUpdateView(UpdateView):
                 print(f'Применяется скидка {discount}% к товарам категории {self.object.name}')
                 self.object.product_set.update(price=F('price') * (1 - discount / 100))
                 db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
-	    return super().form_valid(form)
 
+	    return super().form_valid(form)
 	
 class ProductCategoryDeleteView(DeleteView):
     model = ProductCategory
