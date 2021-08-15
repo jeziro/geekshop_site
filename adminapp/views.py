@@ -118,7 +118,7 @@ class ProductCategoryUpdateView(UpdateView):
                 db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
 
 	    return super().form_valid(form)
-	
+
 class ProductCategoryDeleteView(DeleteView):
     model = ProductCategory
     template_name = 'adminapp/category_delete.html'
