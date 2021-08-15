@@ -1,11 +1,11 @@
-from django.conf.urls import *
+# from django.conf.urls import *
 from django.contrib import admin
 import mainapp.views as mainapp
 
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.urls import re_path, path
+from django.urls import re_path, path, include
 
 urlpatterns = [
     re_path(r'^$', mainapp.main, name='main'),
