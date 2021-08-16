@@ -11,6 +11,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from django.views.generic.detail import DetailView
+from django.db.models import F
 
 
 class UsersListView(ListView):
