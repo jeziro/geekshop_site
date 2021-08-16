@@ -104,8 +104,8 @@ class ProductCategoryUpdateView(UpdateView):
     model = ProductCategory
     template_name = 'adminapp/category_update.html'
     success_url = reverse_lazy('admin:categories')
-    # fields = ('__all__')
-    form_class = ProductCategoryEditForm
+    fields = ('__all__')
+    # form_class = ProductCategoryEditForm
     
     def get_context_data(self, **kwargs):
         context = super(ProductCategoryUpdateView, self).get_context_data(**kwargs)
