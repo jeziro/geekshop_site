@@ -12,6 +12,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from django.views.generic.detail import DetailView
 from django.db.models import F
+from multiprocessing import connection
 
 
 class UsersListView(ListView):
